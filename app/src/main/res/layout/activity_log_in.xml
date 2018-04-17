@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gr"
+    android:padding="7dp"
+    tools:context=".LogIn"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/userName"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:hint="Enter emailId"
+        android:inputType="textEmailAddress"
+        android:shadowColor="@color/black"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/password"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:hint="Enter password"
+        android:inputType="numberPassword"
+        android:shadowColor="@color/black"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:layout_margin="7dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/logIn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple"
+        android:shadowColor="@color/black"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:layout_margin="7dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/newUser"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:text="Not account yet? Create one."
+        android:textAlignment="center"
+        android:textColor="#3a7bd5"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textSize="19sp"
+        android:layout_margin="7dp"
+        android:layout_gravity="center"/>
+
+
+
+
+</LinearLayout>
