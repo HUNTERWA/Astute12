@@ -22,18 +22,6 @@
         android:inputType="textCapWords"/>
 
     <android.support.design.widget.TextInputEditText
-        android:id="@+id/age"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:hint="Enter age"
-        android:shadowColor="@color/black"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:layout_margin="7dp"
-        android:gravity="center"
-        android:inputType="phone"/>
-
-    <android.support.design.widget.TextInputEditText
         android:id="@+id/email"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -45,7 +33,19 @@
         android:gravity="center"
         android:inputType="textEmailAddress"/>
 
-    <Spinner
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:hint="Enter Password"
+        android:shadowColor="@color/black"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:layout_margin="7dp"
+        android:gravity="center"
+        android:inputType="numberPassword"/>
+
+    <!--Spinner
         android:id="@+id/spinner"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -54,7 +54,31 @@
         android:textColorHighlight="@color/white"
         android:layout_margin="7dp"
         android:gravity="center"
-        android:textAlignment="center" />
+        android:textAlignment="center" /-->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:layout_margin="23dp"/>
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:layout_margin="23dp"/>
+        <RadioButton
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="other"
+            android:layout_margin="23dp"/>
+    </RadioGroup>
 
     <Button
         android:id="@+id/signUp"

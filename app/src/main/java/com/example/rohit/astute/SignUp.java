@@ -1,17 +1,16 @@
 package com.example.rohit.astute;
 
+import android.content.Intent;
 import android.os.Build;
-import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,12 +23,12 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class SignUp extends AppCompatActivity
 {
-    EditText name,age,email;
-    Spinner spinner;
+    EditText name,passowrd,email;
     Button button;
-    String[] gender={"male","female","other"};
+    RadioGroup radioGroup;
+    RadioButton radioButton;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -39,15 +38,11 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         setContentView(R.layout.activity_sign_up);
 
         name=findViewById(R.id.name);
-        age=findViewById(R.id.age);
+        passowrd=findViewById(R.id.password);
         email=findViewById(R.id.email);
-        spinner=findViewById(R.id.spinner);
+        radioGroup=findViewById(R.id.radioGroup);
         button=findViewById(R.id.signUp);
 
-        ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,gender);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(arrayAdapter);
-        spinner.setOnItemSelectedListener(this);
         //spinner.setDrawingCacheBackgroundColor(getColor(R.color.colorPrimary));
         //spinner.setBackgroundColor(getColor(R.color.colorPrimary));
         //String gender= (String) spinner.getSelectedItem();
@@ -59,25 +54,31 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
             @Override
             public void onClick(View v)
             {
+                int check=radioGroup.getCheckedRadioButtonId();
+                radioButton=findViewById(check);
+                Log.d("Selected radio button:=",""+radioButton.getText());
                 apiCalling();
             }
         });
 
     }
 
+
+
     private void apiCalling()
     {
         RequestQueue requestQueue=Volley.newRequestQueue(this);
         StringRequest stringRequest;
 
-        final String apiAdd="http://192.168.0.110:9000/user/insert\n";
+        final String apiAdd="http://192.168.0.110:9000/RegisterUser/insert\n";
         final String authKey="";
 
         final String userName=name.getText().toString().trim();
-        final String ag=age.getText().toString().trim();
-        final String emailid=email.getText().toString().trim();
-        final String gender= (String) spinner.getSelectedItem();
-        final String macaddress= Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        final String pass=passowrd.getText().toString().trim();
+        final String emailId=email.getText().toString().trim();
+        final String gender= (String) radioButton.getText();
+        final String type="N";
+        //Log.d("Gender",gender);
 
         stringRequest=new StringRequest(Request.Method.POST, apiAdd, new Response.Listener<String>() {
             @Override
@@ -85,6 +86,8 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
             {
                 Toast.makeText(getApplicationContext(),"Sign up successfull",Toast.LENGTH_LONG).show();
                 Log.d("Response is:=>",response);
+                Intent intent=new Intent(SignUp.this,Start.class);
+                startActivity(intent);
             }
         }, new Response.ErrorListener()
         {
@@ -101,10 +104,10 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
             {
                 Map<String,String> map=new HashMap<String, String>();
                 map.put("name",userName);
-                map.put("age",ag);
+                map.put("emailId",emailId);
                 map.put("gender",gender);
-                map.put("emailId",emailid);
-                map.put("macAddress",macaddress);
+                map.put("password",pass);
+                map.put("type",type);
 
                 return map;
             }
@@ -112,16 +115,5 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         requestQueue.add(stringRequest);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-    {
-        String gender= (String) spinner.getSelectedItem();
-        Log.d("Selected item is",gender);
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent)
-    {
-        Toast.makeText(getApplicationContext(),"Gender is not selected",Toast.LENGTH_LONG);
-    }
 }
