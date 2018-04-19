@@ -72,12 +72,7 @@
             android:layout_height="wrap_content"
             android:text="Female"
             android:layout_margin="23dp"/>
-        <RadioButton
-            android:id="@+id/other"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="other"
-            android:layout_margin="23dp"/>
+
     </RadioGroup>
 
     <Button

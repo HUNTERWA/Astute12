@@ -56,7 +56,8 @@ public class SignUp extends AppCompatActivity
             {
                 int check=radioGroup.getCheckedRadioButtonId();
                 radioButton=findViewById(check);
-                Log.d("Selected radio button:=",""+radioButton.getText());
+                //Log.d("Selected radio button:=",""+radioButton.getText());
+
                 apiCalling();
             }
         });
@@ -79,6 +80,11 @@ public class SignUp extends AppCompatActivity
         final String gender= (String) radioButton.getText();
         final String type="N";
         //Log.d("Gender",gender);
+
+        if (userName.length()==0||pass.length()==0||emailId.length()==0||gender.length()==0|| type.length()==0)
+        {
+            Toast.makeText(getApplicationContext(),"All fields are mandatory",Toast.LENGTH_LONG).show();
+        }
 
         stringRequest=new StringRequest(Request.Method.POST, apiAdd, new Response.Listener<String>() {
             @Override
