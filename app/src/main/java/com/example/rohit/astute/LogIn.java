@@ -60,10 +60,10 @@ public class LogIn extends AppCompatActivity
             {
                 Log.e("User name is",""+emId.getText());
                 Log.e("Password is",""+password.getText());
-                if(emId.length()==0||password.length()==0)
+                /*if(emId.length()==0||password.length()==0)
                 {
                     Toast.makeText(getApplicationContext(),"Enter valid credentials",Toast.LENGTH_LONG).show();
-                }
+                }*/
 
                 apiForLogIn();
             }
@@ -86,7 +86,7 @@ public class LogIn extends AppCompatActivity
             @Override
             public void onResponse(String response)
             {
-                Toast.makeText(getApplicationContext(),"Sign In successfull",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Sign In successfull",Toast.LENGTH_SHORT).show();
                 Log.d("Response:=>",response);
 
                 //Log.d("token:=>",response.)
@@ -99,7 +99,7 @@ public class LogIn extends AppCompatActivity
             @Override
             public void onErrorResponse(VolleyError error)
             {
-                Toast.makeText(getApplicationContext(),"network error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"network error",Toast.LENGTH_SHORT).show();
                 Log.d("Error:=>",""+error);
                 Log.d("mailId\n pass",mailId+"\n"+pass);
             }

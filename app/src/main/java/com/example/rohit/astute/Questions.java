@@ -1,5 +1,6 @@
 package com.example.rohit.astute;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -82,7 +83,7 @@ public class Questions extends AppCompatActivity
             public void onErrorResponse(VolleyError error)
             {
                 Log.d("Error:=>",""+error);
-                Toast.makeText(getApplicationContext(),"network error occured",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"network error occured",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -107,7 +108,7 @@ public class Questions extends AppCompatActivity
     public void callQueOnebyOne()
     {
         ++j;
-        if (j<=jsonArray.length())
+        if (j<jsonArray.length()+1)
         {
             try
             {
@@ -120,5 +121,19 @@ public class Questions extends AppCompatActivity
                 e.printStackTrace();
             }
         }
+
+        if (j==jsonArray.length())
+        {
+            Intent intent=new Intent(Questions.this,VideoList.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+        Intent intent=new Intent(Questions.this,VideoList.class);
+        startActivity(intent);
     }
 }

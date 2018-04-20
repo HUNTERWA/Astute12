@@ -83,14 +83,14 @@ public class SignUp extends AppCompatActivity
 
         if (userName.length()==0||pass.length()==0||emailId.length()==0||gender.length()==0|| type.length()==0)
         {
-            Toast.makeText(getApplicationContext(),"All fields are mandatory",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"All fields are mandatory",Toast.LENGTH_SHORT).show();
         }
 
         stringRequest=new StringRequest(Request.Method.POST, apiAdd, new Response.Listener<String>() {
             @Override
             public void onResponse(String response)
             {
-                Toast.makeText(getApplicationContext(),"Sign up successfull",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Sign up successfull",Toast.LENGTH_SHORT).show();
                 Log.d("Response is:=>",response);
                 Intent intent=new Intent(SignUp.this,Start.class);
                 startActivity(intent);
@@ -100,7 +100,7 @@ public class SignUp extends AppCompatActivity
             @Override
             public void onErrorResponse(VolleyError error)
             {
-                Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
                 Log.d("Error is:=>",""+error);
             }
         })

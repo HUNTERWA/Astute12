@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 public class Good extends AppCompatActivity
@@ -15,7 +16,7 @@ public class Good extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_good);
 
-        Button button=findViewById(R.id.two);
+       Button button=findViewById(R.id.two);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
