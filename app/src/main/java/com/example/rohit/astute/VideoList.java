@@ -30,7 +30,7 @@ public class VideoList extends AppCompatActivity
     String[] lD;//=new String[jsonArray.length()];
     String[] iP;//=new String[jsonArray.length()];
 
-    ImageView imageView1,imageView2,imageView3,imageView4,imageView5,imageView6;
+    ImageView imageView1;//,imageView2,imageView3,imageView4,imageView5,imageView6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
