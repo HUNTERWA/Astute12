@@ -129,11 +129,5 @@ public class Questions extends AppCompatActivity
         }
     }
 
-    @Override
-    protected void onRestart()
-    {
-        super.onRestart();
-        Intent intent=new Intent(Questions.this,VideoList.class);
-        startActivity(intent);
-    }
+
 }

@@ -86,13 +86,23 @@ public class LogIn extends AppCompatActivity
             @Override
             public void onResponse(String response)
             {
-                Toast.makeText(getApplicationContext(),"Sign In successfull",Toast.LENGTH_SHORT).show();
                 Log.d("Response:=>",response);
 
                 //Log.d("token:=>",response.)
+                Boolean code=response.contains("200");
+                if(code==true)
+                {
+                    Toast.makeText(getApplicationContext(),"Sign In successfull",Toast.LENGTH_SHORT).show();
+                    Log.d("Response:=>","true");
+                    Intent intent=new Intent(LogIn.this,Start.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Insert right credential",Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(LogIn.this,Start.class);
-                startActivity(intent);
+                }
+
             }
         }, new Response.ErrorListener()
         {
