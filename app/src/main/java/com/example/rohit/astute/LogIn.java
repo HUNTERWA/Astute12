@@ -73,7 +73,7 @@ public class LogIn extends AppCompatActivity
 
     public void apiForLogIn()
     {
-        final String apiAdd="http://192.168.0.110:9000/UserLogin\n";
+        final String apiAdd="http://45.126.170.217:9000/UserLogin\n";
 
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         StringRequest stringRequest;

@@ -71,7 +71,7 @@ public class SignUp extends AppCompatActivity
         RequestQueue requestQueue=Volley.newRequestQueue(this);
         StringRequest stringRequest;
 
-        final String apiAdd="http://192.168.0.110:9000/RegisterUser/insert\n";
+        final String apiAdd="http://45.126.170.217:9000/RegisterUser/insert\n";
         final String authKey="";
 
         final String userName=name.getText().toString().trim();
