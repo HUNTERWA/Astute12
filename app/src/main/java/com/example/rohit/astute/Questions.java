@@ -44,7 +44,7 @@ public class Questions extends AppCompatActivity
 
     private void apiData()
     {
-        final String apiAddr="http://192.168.0.110:9000/linkQuesAns/FindAll\n";
+        final String apiAddr="http://45.126.170.217:9000/linkQuesAns/FindAll\n";
         JsonObjectRequest jsonObjectRequest;
         RequestQueue requestQueue= Volley.newRequestQueue(this);
 

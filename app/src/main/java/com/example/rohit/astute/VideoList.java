@@ -1,10 +1,12 @@
 package com.example.rohit.astute;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,7 +26,7 @@ import org.json.JSONObject;
 
 public class VideoList extends AppCompatActivity
 {
-    public int k=0;
+    public int k=0,l=0;
     ListView listView;
     JSONArray jsonArray;
     JSONObject jsonObject;
@@ -44,19 +46,11 @@ public class VideoList extends AppCompatActivity
 
         listView=findViewById(R.id.listView);
 
-
-        //imageView2=findViewById(R.id.imageView2);
-        /*imageView3=findViewById(R.id.imageView3);
-        imageView4=findViewById(R.id.imageView4);
-        imageView5=findViewById(R.id.imageView5);
-        imageView6=findViewById(R.id.imageView6);*/
-
-
         fetchData();
-        //fetchImage();
 
         //CustomList customList=new CustomList();
         //listView.setAdapter(customList);
+
     }
 
     private void fetchData()
@@ -110,6 +104,23 @@ public class VideoList extends AppCompatActivity
                 {
                     e.printStackTrace();
                 }
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+                    {
+                        for (l=0;l<jsonArray.length();l++)
+                        {
+                            if (position==l)
+                            {
+                                Intent intent=new Intent(VideoList.this,VideoPlayer.class);
+                                intent.putExtra("position",l);
+                                startActivity(intent);
+                            }
+                        }
+                    }
+                });
             }
         }, new Response.ErrorListener()
         {
@@ -131,7 +142,6 @@ public class VideoList extends AppCompatActivity
         @Override
         public int getCount()
         {
-            //VideoList videoList=new VideoList();
             Log.d("I am in Custom list",""+k);
             return k;
         }
