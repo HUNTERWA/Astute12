@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -77,10 +78,10 @@ public class VideoPlayer extends AppCompatActivity
                     int f=getIntent().getIntExtra("position",0);
                     Log.d("videoPlayer",""+f);
                     WebView webView=findViewById(R.id.webView);
-
                     webView.getSettings().setJavaScriptEnabled(true);
                     webView.setWebChromeClient(new WebChromeClient());
-                    webView.loadUrl(urlArray[f]);
+                    //webView.loadUrl(urlArray[f]);
+                    webView.loadData("<html><body><iframe width=\"100%\" height=\"100%\" src=\'"+urlArray[f]+"' frameborder=\"0\" allowfullscreen></iframe></body></html>", "text/html", "utf-8");
                     reTitle.setText(titleArray[f]);
                     reLong.setText(lArray[f]);
 
