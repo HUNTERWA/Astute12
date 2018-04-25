@@ -3,6 +3,7 @@ package com.example.rohit.astute;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -16,12 +17,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class VideoPlayer extends AppCompatActivity
+public class VideoPlayer extends YouTubeBaseActivity
 {
     TextView reTitle,reLong;
 
@@ -32,15 +37,23 @@ public class VideoPlayer extends AppCompatActivity
     String ur="http://45.126.170.217:9000/upload/FindAll\n";
     String[] urlArray,titleArray,lArray;
 
+    YouTubePlayerView youTubePlayerView;
+    YouTubePlayer.OnInitializedListener onInitializedListener;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_player);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        youTubePlayerView=findViewById(R.id.youTubePlayerView);
+
 
         reTitle=findViewById(R.id.reTitle);
         reLong=findViewById(R.id.reLong);
+
 
         requestQueue= Volley.newRequestQueue(this);
 
@@ -66,22 +79,39 @@ public class VideoPlayer extends AppCompatActivity
                         for (int j=0;j<jsonArray.length();j++)
                         {
                             jsonObject=jsonArray.getJSONObject(j);
-                            urlArray[j]=jsonObject.getString("url");
+                            urlArray[j]=jsonObject.getString("code");
                             titleArray[j]=jsonObject.getString("name");
                             lArray[j]=jsonObject.getString("longDescription");
                             Log.d("videoPlayer",urlArray[j]);
                             Log.d("videoPlayer",titleArray[j]);
                             Log.d("videoPlayer",lArray[j]);
+
                         }
                     }
 
                     int f=getIntent().getIntExtra("position",0);
                     Log.d("videoPlayer",""+f);
-                    WebView webView=findViewById(R.id.webView);
-                    webView.getSettings().setJavaScriptEnabled(true);
-                    webView.setWebChromeClient(new WebChromeClient());
-                    //webView.loadUrl(urlArray[f]);
-                    webView.loadData("<html><body><iframe width=\"100%\" height=\"100%\" src=\'"+urlArray[f]+"' frameborder=\"0\" allowfullscreen></iframe></body></html>", "text/html", "utf-8");
+
+
+                    onInitializedListener=new YouTubePlayer.OnInitializedListener()
+                    {
+                        @Override
+                        public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer,                               boolean b)
+                        {
+                            int f=getIntent().getIntExtra("position",0);
+                            Log.d("new",""+f);
+                            youTubePlayer.loadVideo(urlArray[f]);
+                        }
+
+                        @Override
+                        public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult                                    youTubeInitializationResult)
+                        {
+                            Log.d("errorIs",""+youTubeInitializationResult);
+                        }
+                    };
+                    youTubePlayerView.initialize("AIzaSyDheKHlDb3CYdrkzsVT_F8wsdayraIOtZs",onInitializedListener);
+                    //method for youtube ends at here
+
                     reTitle.setText(titleArray[f]);
                     reLong.setText(lArray[f]);
 
@@ -103,4 +133,6 @@ public class VideoPlayer extends AppCompatActivity
         });
         requestQueue.add(jsonObjectRequest);
     }
+
+
 }
