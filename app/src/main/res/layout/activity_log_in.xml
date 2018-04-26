@@ -9,6 +9,7 @@
     tools:context=".LogIn"
     android:orientation="vertical">
 
+
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/emID"
         android:layout_width="350dp"

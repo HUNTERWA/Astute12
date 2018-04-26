@@ -1,6 +1,7 @@
 package com.example.rohit.astute;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ public class SplashScreen extends AppCompatActivity
 {
     //ImageView imageView;
     TextView textView,tagLine;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,9 +56,21 @@ public class SplashScreen extends AppCompatActivity
             @Override
             public void run()
             {
-                Intent intent=new Intent(SplashScreen.this,MainActivity.class);
-                startActivity(intent);
-                finish();
+                sharedPreferences=getSharedPreferences("USER_INFO",MODE_PRIVATE);
+                String string=sharedPreferences.getString("TOKEN","");
+                if (string=="")
+                {
+                    Intent intent=new Intent(SplashScreen.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else
+                {
+                    Intent intent=new Intent(SplashScreen.this,VideoList.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         },3000);
 

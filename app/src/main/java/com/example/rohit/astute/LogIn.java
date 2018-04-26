@@ -2,6 +2,7 @@ package com.example.rohit.astute;
 
 import android.app.DownloadManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,17 +21,21 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.Key;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LogIn extends AppCompatActivity
 {
-
+    JSONObject jsonObject;
     EditText emId,password;
     TextView newUser;
     Button login;
+    String key;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -99,8 +104,22 @@ public class LogIn extends AppCompatActivity
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),"Insert right credential",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Wrong credential",Toast.LENGTH_SHORT).show();
+                }
 
+                try
+                {
+                    jsonObject=new JSONObject(response);
+                    key=jsonObject.getString("token");
+                    Log.d("TokenKeyIs",key);
+                    sharedPreferences=getSharedPreferences("USER_INFO",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("TOKEN",key);
+                    editor.apply();
+                }
+                catch (JSONException e)
+                {
+                    e.printStackTrace();
                 }
 
             }
