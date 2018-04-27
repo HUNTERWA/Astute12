@@ -9,33 +9,52 @@
     tools:context=".LogIn"
     android:orientation="vertical">
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_gravity="center">
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/emID"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="23dp"
-        android:gravity="center"
+        android:layout_margin="5dp"
         android:hint="Enter emailId"
         android:inputType="textEmailAddress"
         android:shadowColor="@color/black"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"/>
+        android:textColorHint="#D3D3D3"
+        android:padding="3dp"
+        android:layout_gravity="center"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_gravity="center">
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/password"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:hint="Enter password"
         android:inputType="textPassword"
         android:shadowColor="@color/black"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
-        android:layout_margin="7dp"
-        android:gravity="center"
-        android:textColorHint="@color/white"/>
+        android:layout_margin="5dp"
+        android:textColorHint="#D3D3D3"
+        android:padding="3dp"
+        android:layout_gravity="center"/>
+
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:id="@+id/logIn"
@@ -43,7 +62,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ripple"
         android:shadowColor="@color/black"
-        android:text="Login"
+        android:text="Log in"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:layout_margin="7dp"
