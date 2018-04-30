@@ -1,4 +1,4 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,23 +6,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class NotSoGood extends AppCompatActivity
+import com.example.rohit.astute.R;
+
+public class VeryGood extends AppCompatActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_not_so_good);
+        setContentView(R.layout.activity_very_good);
 
-        Button button=findViewById(R.id.three);
+        Button button=findViewById(R.id.one);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent intent=new Intent(NotSoGood.this,LogIn.class);
+                Intent intent=new Intent(VeryGood.this,LogIn.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

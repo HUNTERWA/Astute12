@@ -1,4 +1,4 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
 import android.content.Intent;
 import android.os.Build;
@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.rohit.astute.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -94,6 +95,7 @@ public class SignUp extends AppCompatActivity
                 Log.d("Response is:=>",response);
                 Intent intent=new Intent(SignUp.this,Start.class);
                 startActivity(intent);
+                finish();
             }
         }, new Response.ErrorListener()
         {

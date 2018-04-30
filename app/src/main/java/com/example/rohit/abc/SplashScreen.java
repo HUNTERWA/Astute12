@@ -1,4 +1,4 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,8 +6,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.rohit.astute.R;
 
 public class SplashScreen extends AppCompatActivity
 {

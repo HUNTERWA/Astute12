@@ -1,6 +1,8 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.rohit.astute.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -176,5 +179,23 @@ public class VideoList extends AppCompatActivity
 
             return convertView;
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        //super.onBackPressed();  this was causing instant closing.
+        AlertDialog.Builder adB=new AlertDialog.Builder(this);
+        adB.setMessage("Do you really want to exit?");
+        adB.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                finish();
+            }
+        });
+        adB.setNegativeButton("No",null);
+        adB.show();
     }
 }

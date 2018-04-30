@@ -1,4 +1,4 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.rohit.astute.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -124,11 +125,52 @@ public class Questions extends AppCompatActivity
 
         if (j==jsonArray.length())
         {
+            Log.d("arrayLength",""+j);
+
             Intent intent=new Intent(Questions.this,VideoList.class);
             startActivity(intent);
+            finish();
         }
     }
 
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
 
+        Log.d("Restart","method");
 
+        yes.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                forRestart();
+            }
+        });
+
+        no.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                forRestart();
+            }
+        });
+
+        cantSay.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                forRestart();
+            }
+        });
+    }
+
+    public void forRestart()
+    {
+        Intent intent=new Intent(Questions.this,VideoList.class);
+        startActivity(intent);
+    }
 }

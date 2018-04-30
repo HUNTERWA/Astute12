@@ -1,10 +1,12 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.rohit.astute.R;
 
 public class Start extends AppCompatActivity
 {
@@ -24,6 +26,7 @@ public class Start extends AppCompatActivity
             {
                 Intent intent=new Intent(Start.this,Questions.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

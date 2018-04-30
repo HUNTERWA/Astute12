@@ -1,13 +1,14 @@
-package com.example.rohit.astute;
+package com.example.rohit.abc;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.rohit.astute.R;
 
 public class MainActivity extends AppCompatActivity //implements View.OnClickListener
 {
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity //implements View.OnClickLis
         go();
         Intent intent=new Intent(MainActivity.this,VeryGood.class);
         startActivity(intent);
+        finish();
     }
 
     public void gMethod(View view)
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity //implements View.OnClickLis
         go();
         Intent intent=new Intent(MainActivity.this,Good.class);
         startActivity(intent);
+        finish();
     }
 
     public void nsgMethod(View view)
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity //implements View.OnClickLis
         go();
         Intent intent=new Intent(MainActivity.this,NotSoGood.class);
         startActivity(intent);
+        finish();
     }
 
     public void go()

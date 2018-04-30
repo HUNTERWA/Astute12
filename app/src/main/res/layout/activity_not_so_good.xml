@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gra"
-    tools:context=".NotSoGood"
+    tools:context="com.example.rohit.abc.NotSoGood"
     android:padding="3dp">
 
     <ImageView
@@ -23,9 +23,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif-condensed"
         android:shadowColor="#000000"
-        android:text="No problem,"
+        android:text="No problem!"
         android:textColor="#ffffff"
         android:textColorHighlight="#ffffff"
         android:textSize="40sp"
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="#000000"
-        android:text="it's completely fine. Let's elevate your mood."
+        android:text="It's completely fine. Let's elevate your mood."
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textColorHighlight="#ffffff"

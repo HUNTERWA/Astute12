@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/custombackground"
     android:padding="3dp"
-    tools:context=".Start">
+    tools:context="com.example.rohit.abc.Start">
 
     <TextView
         android:id="@+id/textView"

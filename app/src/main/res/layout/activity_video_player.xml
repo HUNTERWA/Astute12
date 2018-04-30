@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/customground"
-    tools:context="com.example.rohit.astute.VideoPlayer"
+    tools:context="com.example.rohit.astute.com.example.rohit.abc.VideoPlayer"
     android:orientation="vertical">
 
 
