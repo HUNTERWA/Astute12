@@ -3,11 +3,13 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.astute.rohit.abc"
+        //applicationId "com.astute.rohit.abc"
+        applicationId "com.example.rohit.astute"
+
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 2
-        versionName "1.1"
+        versionCode 6
+        versionName "1.3.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -21,6 +23,33 @@ android {
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
+    }
+
+    /*signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\ROHIT\\Astute.jks')
+            keyAlias 'key0'
+            keyPassword 'ATS321'
+            storePassword 'ATS321'
+        }
+    }*/
+    signingConfigs {
+        debug {
+            if (project.hasProperty('C:\\Users\\ROHIT\\Astute.jks')) {
+                storeFile file('C:\\Users\\ROHIT\\Astute.jks')
+                storePassword 'ATS321'
+                keyAlias 'key0'
+                keyPassword 'ATS321'
+            }
+        }
+        release {
+            if (project.hasProperty('C:\\Users\\ROHIT\\Astute.jks')) {
+                storeFile file('C:\\Users\\ROHIT\\Astute.jks')
+                storePassword 'ATS321'
+                keyAlias 'key0'
+                keyPassword 'ATS321'
+            }
+        }
     }
 }
 
@@ -40,8 +69,7 @@ dependencies {
     compile 'com.google.apis:google-api-services-youtube:v3-rev195-1.23.0'
     compileOnly files('libs/YouTubeAndroidPlayerApi.jar')
     compile 'com.android.support:design:27.1.1'
-
-
-
+    compile 'com.google.android.gms:play-services-auth:12.0.1'
 
 }
+

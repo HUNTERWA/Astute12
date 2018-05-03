@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rohit.astute">
+    package="com.example.rohit.astute"><!--com.example.rohit.astute-->
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,31 +16,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.rohit.abc.MainActivity"
+        <activity android:name="com.example.rohit.astute.MainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.SplashScreen">
+        <activity android:name="com.example.rohit.astute.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.rohit.abc.VeryGood"
+        <activity android:name="com.example.rohit.astute.VeryGood"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.Good"
+        <activity android:name="com.example.rohit.astute.Good"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.NotSoGood"
+        <activity android:name="com.example.rohit.astute.NotSoGood"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.LogIn"
+        <activity android:name="com.example.rohit.astute.LogIn"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.SignUp"
+        <activity android:name="com.example.rohit.astute.SignUp"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.Start"
+        <activity android:name="com.example.rohit.astute.Start"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.Questions"
+        <activity android:name="com.example.rohit.astute.Questions"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.example.rohit.abc.VideoList" />
-        <activity android:name="com.example.rohit.abc.VideoPlayer"></activity>
+        <activity android:name="com.example.rohit.astute.VideoList" />
+        <activity android:name="com.example.rohit.astute.VideoPlayer"></activity>
     </application>
 
 </manifest>

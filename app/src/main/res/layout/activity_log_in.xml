@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gr"
     android:padding="7dp"
-    tools:context="com.example.rohit.abc.LogIn"
+    tools:context="com.example.rohit.astute.LogIn"
     android:orientation="vertical">
 
     <android.support.design.widget.TextInputLayout
@@ -62,10 +62,18 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ripple"
         android:shadowColor="@color/black"
-        android:text="Log in"
+        android:text="Sign in"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:layout_margin="7dp"
+        android:layout_gravity="center"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:padding="5dp"
         android:layout_gravity="center"/>
 
     <TextView
@@ -81,7 +89,6 @@
         android:textSize="19sp"
         android:layout_margin="7dp"
         android:layout_gravity="center"/>
-
 
 
 

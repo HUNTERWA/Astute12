@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/customback"
     android:padding="3dp"
-    tools:context="com.example.rohit.abc.Questions">
+    tools:context="com.example.rohit.astute.Questions">
 
     <TextView
         android:id="@+id/question"

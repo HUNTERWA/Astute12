@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/g"
-    tools:context="com.example.rohit.abc.SignUp"
+    tools:context="com.example.rohit.astute.SignUp"
     android:orientation="vertical"
     android:padding="7dp">
 
@@ -43,7 +43,7 @@
         android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:hint="Enter emailId"
+        android:hint="Enter email Id"
         android:shadowColor="@color/black"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"

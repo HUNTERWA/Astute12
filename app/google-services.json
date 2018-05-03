@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "53445913494",
+    "firebase_url": "https://astute-203009.firebaseio.com",
+    "project_id": "astute-203009",
+    "storage_bucket": "astute-203009.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53445913494:android:51667fc6fccaf5ec",
+        "android_client_info": {
+          "package_name": "com.example.rohit.astute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53445913494-ghhttr1qh93f96l6e23it1us4mlh6u4e.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "53445913494-47ka5b9d4nrqju8hnsnp86nf05akodsn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rohit.astute",
+            "certificate_hash": "6879c99129869673304f5babd1be4e06cd4ad933"
+          }
+        },
+        {
+          "client_id": "53445913494-rfjehq6afjk4a6q042rck6vkjs9acg98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6KIxd4h1tifxsrlq5Y7_UOW20UUbQI-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53445913494-ghhttr1qh93f96l6e23it1us4mlh6u4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
