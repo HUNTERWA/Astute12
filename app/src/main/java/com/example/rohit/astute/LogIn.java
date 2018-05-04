@@ -218,7 +218,7 @@ public class LogIn extends Activity implements GoogleApiClient.OnConnectionFaile
             @Override
             public void onErrorResponse(VolleyError error)
             {
-                Toast.makeText(getApplicationContext(),"network error",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"user does not exist",Toast.LENGTH_SHORT).show();
                 Log.d("Error:=>",""+error);
                 Log.d("mailId\n pass",mailId+"\n"+pass);
             }

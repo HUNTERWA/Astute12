@@ -84,8 +84,8 @@
         android:text="No account yet? Create one."
         android:textAlignment="center"
         android:textColor="#3a7bd5"
-        android:textColorHighlight="@color/colorPrimary"
-        android:textColorLink="@color/colorPrimary"
+        android:textColorHighlight="#3a7bd5"
+        android:textColorLink="#3a7bd5"
         android:textSize="19sp"
         android:layout_margin="7dp"
         android:layout_gravity="center"/>
